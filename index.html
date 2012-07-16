@@ -2,11 +2,12 @@
 <html data-ng-app>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Simple Todo List</title>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<script src="assets/js/lib/angular-1.0.1.js"></script> <!-- angularjs.org -->
 </head>
 <body data-ng-controller="TodoController" data-ng-init="getList()"> <!-- init TodoController -->
-
 
 <div class="container-fluid">
 	<div class="row-fluid">
@@ -43,8 +44,7 @@
 	</div>
 </div>
 
-<script src="assets/js/lib/angular-1.0.1.js"></script> <!-- angularjs.org -->
-<script src="assets/js/TodoController.js"></script> 
+<script src="assets/js/TodoController.js"></script>
 
 </body>
 </html>
