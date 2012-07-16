@@ -1,0 +1,50 @@
+<!doctype html>
+<html data-ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Getting Things Done</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body data-ng-controller="TodoController" data-ng-init="getList()"> <!-- init TodoController -->
+
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+
+			<div class="page-header">
+				<h1>Simple GTD <small>with AngularJS and PHP</small></h1>
+			</div>
+	
+			<div class="well">
+				
+				<label><span class="label label-info">You have {{getSumOpenTasks()}} open tasks</span></label>
+
+				<label data-ng-repeat="task in taskList" class="checkbox">
+					<input type="checkbox" data-ng-model="task.status" data-ng-true-value="done" data-ng-false-value="open" data-ng-change="saveList()"> {{task.name}}
+				</label>
+	
+
+
+				<form data-ng-submit="formValidation()" class="form-inline" method="post">
+					<fieldset>
+						<span class="control-group" data-ng-class="errorStyleClass">
+							<input type="text" data-ng-model="taskName" data-ng-change="setErrorStyle(null)"  placeholder="Add your task here">
+						</span>
+						<input type="submit" value="Add task" class="btn btn-success">
+						<a data-ng-click="deleteDoneTasks()" class="btn">Clean things up</a>
+					</fieldset>
+				</form>
+
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script src="assets/js/lib/angular-1.0.1.js"></script> <!-- angularjs.org -->
+<script src="assets/js/TodoController.js"></script> 
+
+</body>
+</html>
