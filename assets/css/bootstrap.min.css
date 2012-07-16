@@ -193,6 +193,9 @@ select{width:220px;border:1px solid #bbb;}
 select[multiple],select[size]{height:auto;}
 select:focus,input[type="file"]:focus,input[type="radio"]:focus,input[type="checkbox"]:focus{outline:thin dotted #333;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
 .radio,.checkbox{min-height:18px;padding-left:18px;}
+.checkbox {background: #EEE;padding:6px 0 5px 25px;border-radius:5px;}
+.checkbox .status-done{color:#333;text-decoration:line-through;}
+.checkbox .status-done span{color:#888;}
 .radio input[type="radio"],.checkbox input[type="checkbox"]{float:left;margin-left:-18px;}
 .controls>.radio:first-child,.controls>.checkbox:first-child{padding-top:5px;}
 .radio.inline,.checkbox.inline{display:inline-block;padding-top:5px;margin-bottom:0;vertical-align:middle;}

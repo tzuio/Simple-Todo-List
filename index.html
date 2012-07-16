@@ -6,6 +6,7 @@
 	<title>Simple Todo List</title>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<script src="assets/js/lib/angular-1.0.1.js"></script> <!-- angularjs.org -->
+	<script src="assets/js/TodoController.js"></script>
 </head>
 <body data-ng-controller="TodoController" data-ng-init="getList()"> <!-- init TodoController -->
 
@@ -22,15 +23,16 @@
 				<label><span class="label label-info">You have {{getSumOpenTasks()}} open tasks</span></label>
 
 				<label data-ng-repeat="task in taskList" class="checkbox">
-					<input type="checkbox" data-ng-model="task.status" data-ng-true-value="done" data-ng-false-value="open" data-ng-change="saveList()"> {{task.name}}
+					<input type="checkbox" data-ng-model="task.status" data-ng-true-value="done" data-ng-false-value="open" data-ng-change="saveList()"> 
+						<span class="status-{{task.status}}"><span>{{task.name}}</span></span>
 				</label>
 	
 
 
-				<form data-ng-submit="formValidation()" class="form-inline" method="post">
+				<form data-ng-submit="formValidation()" method="post">
 					<fieldset>
 						<span class="control-group" data-ng-class="errorStyleClass">
-							<input type="text" data-ng-model="taskName" data-ng-change="setErrorStyle(null)"  placeholder="Add your task here">
+							<input type="text" data-ng-model="taskName" data-ng-change="setErrorStyle(null)" class="span" placeholder="Add your task here">
 						</span>
 						<input type="submit" value="Add task" class="btn btn-success">
 						<a data-ng-click="deleteDoneTasks()" class="btn">Clean things up</a>
@@ -43,8 +45,6 @@
 		</div>
 	</div>
 </div>
-
-<script src="assets/js/TodoController.js"></script>
 
 </body>
 </html>
